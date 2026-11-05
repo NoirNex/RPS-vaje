@@ -5,4 +5,6 @@ int main()
 {
     int stevilo1, stevilo2;
     cin >> stevilo1 >> stevilo2;
+    cout << stevilo1 + stevilo2 << endl;
+    return 0;
 }
