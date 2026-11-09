@@ -1,10 +1,11 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-float vsota(int tab[], int n)
+float vsota(vector<int> tab)
 {
     int stevec = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < tab.size(); i++)
     {
         stevec += tab[i];
     }
@@ -12,15 +13,15 @@ float vsota(int tab[], int n)
     return stevec;
 }
 
-void povprecje(int tab[], int n, int vs)
+void povprecje(vector<int> tab, int vs)
 {
-    cout << vs / n << endl;
+    cout << vs / tab.size() << endl;
 }
 
-void najvecje(int tab[], int n)
+void najvecje(vector<int> tab)
 {
     int temp = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < tab.size(); i++)
     {
         if (tab[i] > temp)
         {
@@ -30,12 +31,12 @@ void najvecje(int tab[], int n)
     cout << temp << endl;
 }
 
-void najmanjsi(int tab[], int n)
+void najmanjsi(vector<int> tab)
 {
     int temp;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < tab.size(); i++)
     {
-        for (int j = 0; j < n - i - 1; j++)
+        for (int j = 0; j < tab.size() - i - 1; j++)
         {
             if (tab[j] > tab[j + 1])
             {
@@ -48,10 +49,10 @@ void najmanjsi(int tab[], int n)
     cout << tab[0] << endl;
 }
 
-void sodi(int tab[], int n)
+void sodi(vector<int> tab)
 {
     int stevec = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < tab.size(); i++)
     {
         if (tab[i] % 2 == 0)
         {
@@ -61,10 +62,10 @@ void sodi(int tab[], int n)
     cout << stevec << endl;
 }
 
-void liha(int tab[], int n)
+void liha(vector<int> tab)
 {
     int stevec = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < tab.size(); i++)
     {
         if (tab[i] % 2 != 0)
         {
@@ -74,9 +75,9 @@ void liha(int tab[], int n)
     cout << stevec << endl;
 }
 
-void vecja_od_10(int tab[], int n)
+void vecja_od_10(vector<int> tab)
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < tab.size(); i++)
     {
         if (tab[i] > 10)
         {
@@ -86,12 +87,12 @@ void vecja_od_10(int tab[], int n)
     cout << endl;
 }
 
-void uredi(int tab[], int n)
+void uredi(vector<int> tab)
 {
     int temp;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < tab.size(); i++)
     {
-        for (int j = 0; j < n - i - 1; j++)
+        for (int j = 0; j < tab.size() - i - 1; j++)
         {
             if (tab[j] > tab[j + 1])
             {
@@ -100,6 +101,21 @@ void uredi(int tab[], int n)
                 tab[j + 1] = temp;
             }
         }
+    }
+    for (int i = 0; i < tab.size(); i++)
+    {
+        cout << tab[i] << " ";
+    }
+    cout << endl;
+}
+
+void dodaj(vector<int> tab)
+{
+    int x;
+    cin >> x;
+    tab.push_back(x);
+    for (int i = 0; i < tab.size(); i++)
+    {
         cout << tab[i] << " ";
     }
     cout << endl;
@@ -107,14 +123,15 @@ void uredi(int tab[], int n)
 
 int main()
 {
-    int tab[8] = {12, 5, 8, 21, 3, 16, 9, 14};
-    float vs = vsota(tab, 8);
-    povprecje(tab, 8, vs);
-    najvecje(tab, 8);
-    najmanjsi(tab, 8);
-    sodi(tab, 8);
-    liha(tab, 8);
-    vecja_od_10(tab, 8);
-    uredi(tab, 8);
+    vector<int> tab = {12, 5, 8, 21, 3, 16, 9, 14};
+    float vs = vsota(tab);
+    povprecje(tab, vs);
+    najvecje(tab);
+    najmanjsi(tab);
+    sodi(tab);
+    liha(tab);
+    vecja_od_10(tab);
+    uredi(tab);
+    dodaj(tab);
     return 0;
 }
