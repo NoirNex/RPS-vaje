@@ -87,7 +87,7 @@ void vecja_od_10(vector<int> tab)
     cout << endl;
 }
 
-void uredi(vector<int> tab)
+void uredi(vector<int> &tab)
 {
     int temp;
     for (int i = 0; i < tab.size(); i++)
@@ -109,11 +109,34 @@ void uredi(vector<int> tab)
     cout << endl;
 }
 
-void dodaj(vector<int> tab)
+void dodaj(vector<int> &tab)
 {
     int x;
     cin >> x;
     tab.push_back(x);
+    for (int i = 0; i < tab.size(); i++)
+    {
+        cout << tab[i] << " ";
+    }
+    cout << endl;
+}
+
+void odstrani(vector<int> tab)
+{
+    int x;
+    bool st = 0;
+    cin >> x;
+    for (int i = 0; i < tab.size(); i++)
+    {
+        if (tab[i] == x)
+        {
+            tab.erase(tab.begin() + i);
+            st = 1;
+            break;
+        }
+    }
+    if (st == 0)
+        cout << "takega stevila ni v seznamu" << endl;
     for (int i = 0; i < tab.size(); i++)
     {
         cout << tab[i] << " ";
@@ -133,5 +156,6 @@ int main()
     vecja_od_10(tab);
     uredi(tab);
     dodaj(tab);
+    odstrani(tab);
     return 0;
 }
