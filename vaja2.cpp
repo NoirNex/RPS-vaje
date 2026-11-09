@@ -86,6 +86,25 @@ void vecja_od_10(int tab[], int n)
     cout << endl;
 }
 
+void uredi(int tab[], int n)
+{
+    int temp;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (tab[j] > tab[j + 1])
+            {
+                temp = tab[j];
+                tab[j] = tab[j + 1];
+                tab[j + 1] = temp;
+            }
+        }
+        cout << tab[i] << " ";
+    }
+    cout << endl;
+}
+
 int main()
 {
     int tab[8] = {12, 5, 8, 21, 3, 16, 9, 14};
@@ -96,5 +115,6 @@ int main()
     sodi(tab, 8);
     liha(tab, 8);
     vecja_od_10(tab, 8);
+    uredi(tab, 8);
     return 0;
 }
