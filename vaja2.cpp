@@ -48,6 +48,19 @@ void najmanjsi(int tab[], int n)
     cout << tab[0] << endl;
 }
 
+void sodi(int tab[], int n)
+{
+    int stevec = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (tab[i] % 2 == 0)
+        {
+            stevec++;
+        }
+    }
+    cout << stevec << endl;
+}
+
 int main()
 {
     int tab[8] = {12, 5, 8, 21, 3, 16, 9, 14};
@@ -55,5 +68,6 @@ int main()
     povprecje(tab, 8, vs);
     najvecje(tab, 8);
     najmanjsi(tab, 8);
+    sodi(tab, 8);
     return 0;
 }
