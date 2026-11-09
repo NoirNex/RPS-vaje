@@ -74,6 +74,18 @@ void liha(int tab[], int n)
     cout << stevec << endl;
 }
 
+void vecja_od_10(int tab[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (tab[i] > 10)
+        {
+            cout << tab[i] << " ";
+        }
+    }
+    cout << endl;
+}
+
 int main()
 {
     int tab[8] = {12, 5, 8, 21, 3, 16, 9, 14};
@@ -83,5 +95,6 @@ int main()
     najmanjsi(tab, 8);
     sodi(tab, 8);
     liha(tab, 8);
+    vecja_od_10(tab, 8);
     return 0;
 }
