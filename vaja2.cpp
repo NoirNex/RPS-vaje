@@ -61,6 +61,19 @@ void sodi(int tab[], int n)
     cout << stevec << endl;
 }
 
+void liha(int tab[], int n)
+{
+    int stevec = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (tab[i] % 2 != 0)
+        {
+            stevec++;
+        }
+    }
+    cout << stevec << endl;
+}
+
 int main()
 {
     int tab[8] = {12, 5, 8, 21, 3, 16, 9, 14};
@@ -69,5 +82,6 @@ int main()
     najvecje(tab, 8);
     najmanjsi(tab, 8);
     sodi(tab, 8);
+    liha(tab, 8);
     return 0;
 }
